@@ -72,37 +72,22 @@ img.map { width:78%; display:block; margin:0 auto; border:1px solid var(--line);
     <div class="step"><div class="num">2</div><div><b>Um computador (Mac ou Windows)</b><p>O app que você vai criar poderá ser usado em qualquer aparelho. Mas a criação acontece no computador.</p></div></div>
   </div>
   <div class="tip">💡 Opcional, mas ajuda muito: tenha à mão sua logo, suas cores e, se usa a plataforma <b>Exclusive Closer</b>, o PDF do seu briefing.</div>
-  <h2 style="margin-top:26px">Onde ficam as skills?</h2>
-  <p class="sub">Toda skill é uma pasta. Você só precisa colocá-la no lugar certo.</p>
-  <table>
-    <tr><th>Programa</th><th>Pasta das skills</th></tr>
-    <tr><td><b>Claude Code</b> · Mac</td><td><code>~/.claude/skills</code> (dentro da sua pasta de usuário)</td></tr>
-    <tr><td><b>Claude Code</b> · Windows</td><td><code>C:\Users\SEU-NOME\.claude\skills</code></td></tr>
-    <tr><td><b>Codex</b> · Mac</td><td><code>~/.codex/skills</code></td></tr>
-    <tr><td><b>Codex</b> · Windows</td><td><code>C:\Users\SEU-NOME\.codex\skills</code></td></tr>
-  </table>
-  <div class="warn">⚠️ Pastas que começam com ponto ficam escondidas. No Mac, aperte <b>Cmd + Shift + .</b> no Finder para vê-las. No Windows, em "Exibir", marque "Itens ocultos". Se a pasta <code>skills</code> não existir, crie.</div>
   <div class="foot"><span>exclusiveapp · tutorial</span><span>3</span></div>
 </section>
 
 <section class="page">
-  <span class="tag">Instalar</span><h2>Instalação: escolha um caminho</h2>
-  <p class="sub">O caminho A não usa terminal. O B é mais rápido para quem já está confortável.</p>
-  <div class="card" style="margin-bottom:12px"><h3>🅰 Caminho A: baixar e arrastar (mais fácil)</h3>
-  <div class="steps" style="margin-top:8px">
-    <div class="step"><div class="num">1</div><div><b>Abra a página da skill</b><p><code>github.com/mickfelipe/exclusiveapp</code></p></div></div>
-    <div class="step"><div class="num">2</div><div><b>Baixe o ZIP</b><p>Botão verde <b>Code</b> → <b>Download ZIP</b>.</p></div></div>
-    <div class="step"><div class="num">3</div><div><b>Descompacte</b><p>Dê dois cliques no arquivo. Vai aparecer uma pasta <code>exclusiveapp-main</code>.</p></div></div>
-    <div class="step"><div class="num">4</div><div><b>Renomeie e mova</b><p>Renomeie para <code>exclusiveapp</code> e arraste para a pasta de skills (página anterior).</p></div></div>
-  </div></div>
-  <div class="card"><h3>🅱 Caminho B: um comando no terminal</h3>
-  <p style="margin:2px 0">Para o Claude Code:</p>
-  <span class="cmd">git clone https://github.com/mickfelipe/exclusiveapp.git ~/.claude/skills/exclusiveapp</span>
-  <p style="margin:8px 0 2px">Para o Codex:</p>
-  <span class="cmd">git clone https://github.com/mickfelipe/exclusiveapp.git ~/.codex/skills/exclusiveapp</span></div>
-  <div class="tip">✅ Para conferir: dentro da pasta <code>skills</code> deve existir <code>exclusiveapp</code> e, dentro dela, o arquivo <code>SKILL.md</code>.</div>
-  
-  <div class="warn">⚠️ Depois de instalar, <b>feche e abra de novo</b> o Claude Code ou o Codex para ele reconhecer a skill.</div>
+  <span class="tag">Instalar</span><h2>Instalação em 1 minuto</h2>
+  <p class="sub">Você só precisa pedir para o Claude instalar. Ele faz o resto.</p>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div><b>Abra o Claude Code</b><p>No aplicativo Claude, entre na aba <i>Code</i>.</p></div></div>
+    <div class="step"><div class="num">2</div><div><b>Escreva este comando no chat</b><p>Copie e cole exatamente assim:</p></div></div>
+  </div>
+  <div class="say" style="font-family:Menlo,Consolas,monospace;font-size:15px">Instalar https://github.com/mickfelipe/exclusiveapp</div>
+  <div class="steps">
+    <div class="step"><div class="num">3</div><div><b>Aguarde e aprove</b><p>O Claude baixa a skill e instala. Se ele pedir permissão, aprove.</p></div></div>
+    <div class="step"><div class="num">4</div><div><b>Reinicie o Claude Code</b><p>Feche e abra de novo para ele reconhecer a nova skill.</p></div></div>
+  </div>
+  <div class="tip">✅ Para conferir, digite <b>/exclusiveapp</b> no chat. Se a skill aparecer na lista, está instalada.</div>
   <div class="foot"><span>exclusiveapp · tutorial</span><span>4</span></div>
 </section>
 
@@ -166,10 +151,8 @@ img.map { width:78%; display:block; margin:0 auto; border:1px solid var(--line);
   <h2 style="margin-top:22px">Algo não funcionou?</h2>
   <table>
     <tr><th>Problema</th><th>O que fazer</th></tr>
-    <tr><td>A skill não aparece ou não responde</td><td>Confira se <code>SKILL.md</code> está dentro de <code>skills/exclusiveapp</code> e reinicie o programa.</td></tr>
-    <tr><td>Fica uma pasta dentro de outra (<code>exclusiveapp/exclusiveapp</code>)</td><td>Suba um nível: o <code>SKILL.md</code> precisa estar logo dentro de <code>exclusiveapp</code>.</td></tr>
-    <tr><td>Não acho a pasta <code>.claude</code></td><td>Ela está oculta. Mostre itens ocultos (Cmd+Shift+. no Mac) ou crie a pasta.</td></tr>
-    <tr><td>A skill não achou meu PDF do briefing</td><td>Coloque o arquivo na pasta do app (de preferência em <code>02-briefing</code>) ou envie direto no chat.</td></tr>
+    <tr><td>A skill não aparece ou não responde</td><td>Reinicie o Claude Code. Se continuar, peça de novo: Instalar https://github.com/mickfelipe/exclusiveapp</td></tr>
+            <tr><td>A skill não achou meu PDF do briefing</td><td>Coloque o arquivo na pasta do app (de preferência em <code>02-briefing</code>) ou envie direto no chat.</td></tr>
     <tr><td>Quero mudar uma resposta</td><td>Diga qual etapa quer refazer. A skill volta nela e atualiza a ficha.</td></tr>
   </table>
   <div class="say" style="margin-top:22px">Pronto! Abra a sua pasta, escreva <b>“Quero criar um app”</b> e deixe a skill conduzir. 🚀</div>
