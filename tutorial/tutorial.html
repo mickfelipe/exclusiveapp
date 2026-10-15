@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Tutorial exclusiveapp</title>
+<style>
+@page { size: A4; margin: 0 }
+:root { --ink:#1b2a41; --blue:#1f6fe0; --soft:#e8f1fd; --org:#f08a24; --orgsoft:#fdf0e1; --grn:#1a9a62; --grnsoft:#e2f6ec; --gray:#5c6675; --line:#d9e0ea }
+* { box-sizing:border-box }
+body { margin:0; font-family:-apple-system,"Helvetica Neue",Arial,sans-serif; color:var(--ink); font-size:13.5px; line-height:1.55 }
+.page { width:210mm; height:297mm; padding:18mm 17mm 14mm; page-break-after:always; position:relative; overflow:hidden }
+.page:last-child { page-break-after:auto }
+h1 { font-size:30px; margin:0 0 6px; line-height:1.15 }
+h2 { font-size:22px; margin:0 0 4px }
+.sub { color:var(--gray); margin:0 0 16px }
+.tag { display:inline-block; background:var(--soft); color:var(--blue); font-weight:700; font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding:4px 10px; border-radius:20px; margin-bottom:10px }
+.cover { background:var(--ink); color:#fff; padding:0 }
+.cover .in { padding:30mm 20mm; height:100% }
+.cover h1 { font-size:46px; margin-top:40mm }
+.cover p { font-size:17px; color:#c9d6ea; max-width:130mm }
+.cover .pill { display:inline-block; border:1px solid #4a6089; border-radius:30px; padding:6px 14px; margin:6px 6px 0 0; font-size:13px; color:#dbe7fa }
+.cover .logo { width:62px; height:62px; border-radius:16px; background:var(--blue); display:flex; align-items:center; justify-content:center; font-size:34px }
+.steps { display:grid; gap:12px }
+.step { display:flex; gap:14px; align-items:flex-start; border:1px solid var(--line); border-radius:14px; padding:13px 15px; background:#fff }
+.num { flex:none; width:34px; height:34px; border-radius:50%; background:var(--blue); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:16px }
+.step b { font-size:15px }
+.step p { margin:2px 0 0 }
+code, .cmd { font-family:"SF Mono",Menlo,Consolas,monospace }
+.cmd { display:block; background:#0f1b2d; color:#cfe3ff; border-radius:10px; padding:10px 13px; margin:8px 0 2px; font-size:12px; word-break:break-all }
+.say { background:var(--soft); border-left:5px solid var(--blue); border-radius:0 10px 10px 0; padding:10px 14px; margin:10px 0; font-size:15px }
+.tip { background:var(--grnsoft); border-radius:12px; padding:10px 14px; margin:12px 0; color:#0d5c3a }
+.warn { background:var(--orgsoft); border-radius:12px; padding:10px 14px; margin:12px 0; color:#7a4208 }
+.cols { display:grid; grid-template-columns:1fr 1fr; gap:14px }
+.card { border:1px solid var(--line); border-radius:14px; padding:14px 16px }
+.card h3 { margin:0 0 6px; font-size:16px }
+.tree { background:#f6f8fb; border:1px solid var(--line); border-radius:12px; padding:12px 16px; font-family:Menlo,Consolas,monospace; font-size:12px; line-height:1.7; white-space:pre }
+table { width:100%; border-collapse:collapse; margin-top:6px }
+td,th { text-align:left; padding:7px 10px; border-bottom:1px solid var(--line); font-size:13px; vertical-align:top }
+th { background:var(--soft); color:var(--blue) }
+.grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:10px }
+.mini { border-radius:12px; padding:10px 12px; font-size:12.5px }
+.foot { position:absolute; bottom:8mm; left:17mm; right:17mm; color:#9aa5b5; font-size:11px; display:flex; justify-content:space-between }
+img.map { width:78%; display:block; margin:0 auto; border:1px solid var(--line); border-radius:14px }
+.bar { height:10px; background:#e5ebf3; border-radius:6px; overflow:hidden; margin:6px 0 }
+.bar i { display:block; height:100%; width:42%; background:var(--blue) }
+</style></head><body>
+
+<section class="page cover"><div class="in">
+  <div class="logo">🚀</div>
+  <h1>Crie seu app do zero, sem saber programar</h1>
+  <p>Tutorial de instalação e uso da skill <b>exclusiveapp</b> no Claude e no Codex.</p>
+  <div style="margin-top:22px"><span class="pill">⏱ 5 min para instalar</span><span class="pill">💬 Uma pergunta por vez</span><span class="pill">🎨 Com a sua marca e o seu jeito de falar</span></div>
+</div></section>
+
+<section class="page">
+  <span class="tag">Entenda</span><h2>O que é a skill exclusiveapp?</h2>
+  <p class="sub">Um "assistente especialista" que você instala uma vez e usa sempre que quiser criar um app.</p>
+  <div class="cols">
+    <div class="card"><h3>🧭 Ela guia você</h3><p>Faz as perguntas certas, uma de cada vez, e só avança quando você responde. Você não precisa saber o que perguntar.</p></div>
+    <div class="card"><h3>🗣 Fala como a sua marca</h3><p>Guarda o seu tom de voz palavra por palavra e usa nos textos do app.</p></div>
+    <div class="card"><h3>📁 Organiza tudo</h3><p>Você cria uma pasta e coloca logo, cores, PDFs e prints. A skill lê tudo de lá.</p></div>
+    <div class="card"><h3>📱 Funciona em qualquer tela</h3><p>Celular, tablet ou computador: ela explica o design responsivo e ajuda a escolher.</p></div>
+  </div>
+  <h3 style="margin:18px 0 8px">Como a skill enxerga o seu app</h3>
+  <img class="map" src="../assets/mapa-do-sistema.webp">
+  <div class="tip">💡 Você responde cada ponto deste mapa: objetivo, usuários, entradas, o que a IA faz, módulos e cuidados.</div>
+  <div class="foot"><span>exclusiveapp · tutorial</span><span>2</span></div>
+</section>
+
+<section class="page">
+  <span class="tag">Antes de começar</span><h2>O que você precisa</h2>
+  <p class="sub">Duas coisas. Se já tem, pule para a próxima página.</p>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div><b>Uma conta no Claude (ou no Codex)</b><p>Use o <b>Claude Code</b> (no aplicativo Claude para computador, aba <i>Code</i>) ou o <b>Codex</b>. Faça login com a sua conta.</p></div></div>
+    <div class="step"><div class="num">2</div><div><b>Um computador (Mac ou Windows)</b><p>O app que você vai criar poderá ser usado em qualquer aparelho. Mas a criação acontece no computador.</p></div></div>
+  </div>
+  <div class="tip">💡 Opcional, mas ajuda muito: tenha à mão sua logo, suas cores e, se usa a plataforma <b>Exclusive Closer</b>, o PDF do seu briefing.</div>
+  <h2 style="margin-top:26px">Onde ficam as skills?</h2>
+  <p class="sub">Toda skill é uma pasta. Você só precisa colocá-la no lugar certo.</p>
+  <table>
+    <tr><th>Programa</th><th>Pasta das skills</th></tr>
+    <tr><td><b>Claude Code</b> · Mac</td><td><code>~/.claude/skills</code> (dentro da sua pasta de usuário)</td></tr>
+    <tr><td><b>Claude Code</b> · Windows</td><td><code>C:\Users\SEU-NOME\.claude\skills</code></td></tr>
+    <tr><td><b>Codex</b> · Mac</td><td><code>~/.codex/skills</code></td></tr>
+    <tr><td><b>Codex</b> · Windows</td><td><code>C:\Users\SEU-NOME\.codex\skills</code></td></tr>
+  </table>
+  <div class="warn">⚠️ Pastas que começam com ponto ficam escondidas. No Mac, aperte <b>Cmd + Shift + .</b> no Finder para vê-las. No Windows, em "Exibir", marque "Itens ocultos". Se a pasta <code>skills</code> não existir, crie.</div>
+  <div class="foot"><span>exclusiveapp · tutorial</span><span>3</span></div>
+</section>
+
+<section class="page">
+  <span class="tag">Instalar</span><h2>Instalação: escolha um caminho</h2>
+  <p class="sub">O caminho A não usa terminal. O B é mais rápido para quem já está confortável.</p>
+  <div class="card" style="margin-bottom:12px"><h3>🅰 Caminho A: baixar e arrastar (mais fácil)</h3>
+  <div class="steps" style="margin-top:8px">
+    <div class="step"><div class="num">1</div><div><b>Abra a página da skill</b><p><code>github.com/mickfelipe/exclusiveapp</code></p></div></div>
+    <div class="step"><div class="num">2</div><div><b>Baixe o ZIP</b><p>Botão verde <b>Code</b> → <b>Download ZIP</b>.</p></div></div>
+    <div class="step"><div class="num">3</div><div><b>Descompacte</b><p>Dê dois cliques no arquivo. Vai aparecer uma pasta <code>exclusiveapp-main</code>.</p></div></div>
+    <div class="step"><div class="num">4</div><div><b>Renomeie e mova</b><p>Renomeie para <code>exclusiveapp</code> e arraste para a pasta de skills (página anterior).</p></div></div>
+  </div></div>
+  <div class="card"><h3>🅱 Caminho B: um comando no terminal</h3>
+  <p style="margin:2px 0">Para o Claude Code:</p>
+  <span class="cmd">git clone https://github.com/mickfelipe/exclusiveapp.git ~/.claude/skills/exclusiveapp</span>
+  <p style="margin:8px 0 2px">Para o Codex:</p>
+  <span class="cmd">git clone https://github.com/mickfelipe/exclusiveapp.git ~/.codex/skills/exclusiveapp</span></div>
+  <div class="tip">✅ Para conferir: dentro da pasta <code>skills</code> deve existir <code>exclusiveapp</code> e, dentro dela, o arquivo <code>SKILL.md</code>.</div>
+  
+  <div class="warn">⚠️ Depois de instalar, <b>feche e abra de novo</b> o Claude Code ou o Codex para ele reconhecer a skill.</div>
+  <div class="foot"><span>exclusiveapp · tutorial</span><span>4</span></div>
+</section>
+
+<section class="page">
+  <span class="tag">Usar</span><h2>Começando seu primeiro app</h2>
+  <p class="sub">Quatro passos, e a partir daí a skill conduz.</p>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div><b>Crie uma pasta para o app</b><p>Na Área de Trabalho: botão direito → Nova Pasta. Dê um nome simples, como <code>meu-app</code>.</p></div></div>
+    <div class="step"><div class="num">2</div><div><b>Coloque seus materiais lá dentro</b><p>Logo, paleta de cores, PDFs importantes, prints de referência e o <b>PDF do briefing Exclusive</b>, se tiver. Não tem tudo? Sem problema, a skill segue e marca o que falta.</p></div></div>
+    <div class="step"><div class="num">3</div><div><b>Abra o Claude Code ou o Codex dentro dessa pasta</b><p>No app Claude (aba <i>Code</i>), escolha a pasta <code>meu-app</code> como pasta de trabalho.</p></div></div>
+    <div class="step"><div class="num">4</div><div><b>Diga a frase mágica</b><p>Escreva no chat:</p></div></div>
+  </div>
+  <div class="say">“Quero criar um app” &nbsp;<span style="color:var(--gray);font-size:12px">(ou digite /exclusiveapp)</span></div>
+  <h3 style="margin:16px 0 8px">Sugestão de pastas dentro do seu app</h3>
+  <div class="tree">meu-app/
+├── 01-marca/        logo, cores, fontes
+├── 02-briefing/     PDF "Briefing Exclusive"
+├── 03-documentos/   PDFs e materiais importantes
+├── 04-prints/       telas que você gosta
+└── 05-dados/        planilhas e listas</div>
+  <div class="tip">💡 Quer que a skill crie essas subpastas para você? Ela oferece e faz isso sozinha, é só aceitar.</div>
+  <div class="foot"><span>exclusiveapp · tutorial</span><span>5</span></div>
+</section>
+
+<section class="page">
+  <span class="tag">Passo a passo</span><h2>O que vai acontecer na conversa</h2>
+  <p class="sub">São 12 etapas. Você sempre vê onde está.</p>
+  <div class="bar"><i></i></div><p style="font-size:12px;color:var(--gray);margin:0 0 10px">Exemplo do progresso que aparece no chat: 42% · etapa 5 de 12</p>
+  <div class="grid3">
+    <div class="mini" style="background:var(--soft)"><b>1 Pasta</b><br>Nome do app e materiais</div>
+    <div class="mini" style="background:var(--soft)"><b>2 Origem</b><br>Usa o briefing Exclusive Closer? Sim ou não</div>
+    <div class="mini" style="background:var(--soft)"><b>3 Marca e tom de voz</b><br>Seu negócio, público e jeito de falar</div>
+    <div class="mini" style="background:var(--orgsoft)"><b>4 Objetivo</b><br>Que problema o app resolve</div>
+    <div class="mini" style="background:var(--orgsoft)"><b>5 Usuários</b><br>Quem vai usar</div>
+    <div class="mini" style="background:var(--orgsoft)"><b>6 Entradas</b><br>Formulários, arquivos, mensagens</div>
+    <div class="mini" style="background:var(--orgsoft)"><b>7 IA</b><br>O que ela lê, analisa, responde</div>
+    <div class="mini" style="background:var(--orgsoft)"><b>8 Módulos</b><br>Painel, cadastros, relatórios</div>
+    <div class="mini" style="background:var(--orgsoft)"><b>9 Cuidados</b><br>Segurança, permissões, aprovação</div>
+    <div class="mini" style="background:var(--grnsoft)"><b>10 Dispositivo</b><br>Celular, computador ou todos</div>
+    <div class="mini" style="background:var(--grnsoft)"><b>11 Revisão</b><br>Resumo para você aprovar</div>
+    <div class="mini" style="background:var(--grnsoft)"><b>12 Construção</b><br>O app nasce aos poucos</div>
+  </div>
+  <h3 style="margin:18px 0 6px">Duas formas de contar sobre a sua marca</h3>
+  <div class="cols">
+    <div class="card"><h3>✅ Tenho o briefing Exclusive</h3><p>Você sobe o PDF ou pede para a skill procurá-lo na pasta. Sem PDF, ela pergunta os campos <b>exatamente como na plataforma</b>: Negócio, Público-Alvo e Tom &amp; Voz.</p></div>
+    <div class="card"><h3>🙋 Não tenho</h3><p>A skill explica de forma simples o que é um app e faz perguntas curtas sobre o seu negócio e o seu jeito de falar.</p></div>
+  </div>
+  <div class="tip">💡 Respondeu “não sei”? Tudo bem. A skill oferece 2 ou 3 opções com exemplos do seu ramo e você escolhe.</div>
+  <div class="foot"><span>exclusiveapp · tutorial</span><span>6</span></div>
+</section>
+
+<section class="page">
+  <span class="tag">Dicas</span><h2>Para tirar o melhor da skill</h2>
+  <p class="sub">Pequenos hábitos que deixam o resultado muito melhor.</p>
+  <div class="cols">
+    <div class="card"><h3>📝 Responda do seu jeito</h3><p>Escreva como você fala. Quanto mais natural, mais o app soa como a sua marca.</p></div>
+    <div class="card"><h3>📋 Cole textos seus</h3><p>Um post ou uma mensagem que você escreveu e gostou vale mais que mil explicações.</p></div>
+    <div class="card"><h3>🎯 Comece pequeno</h3><p>A primeira versão terá até 3 módulos essenciais. O resto fica para depois.</p></div>
+    <div class="card"><h3>⏸ Pode pausar</h3><p>Tudo fica salvo em <code>PROJETO.md</code> e <code>TOM-DE-VOZ.md</code>. Volte outro dia e diga “quero continuar meu app”.</p></div>
+  </div>
+  <h2 style="margin-top:22px">Algo não funcionou?</h2>
+  <table>
+    <tr><th>Problema</th><th>O que fazer</th></tr>
+    <tr><td>A skill não aparece ou não responde</td><td>Confira se <code>SKILL.md</code> está dentro de <code>skills/exclusiveapp</code> e reinicie o programa.</td></tr>
+    <tr><td>Fica uma pasta dentro de outra (<code>exclusiveapp/exclusiveapp</code>)</td><td>Suba um nível: o <code>SKILL.md</code> precisa estar logo dentro de <code>exclusiveapp</code>.</td></tr>
+    <tr><td>Não acho a pasta <code>.claude</code></td><td>Ela está oculta. Mostre itens ocultos (Cmd+Shift+. no Mac) ou crie a pasta.</td></tr>
+    <tr><td>A skill não achou meu PDF do briefing</td><td>Coloque o arquivo na pasta do app (de preferência em <code>02-briefing</code>) ou envie direto no chat.</td></tr>
+    <tr><td>Quero mudar uma resposta</td><td>Diga qual etapa quer refazer. A skill volta nela e atualiza a ficha.</td></tr>
+  </table>
+  <div class="say" style="margin-top:22px">Pronto! Abra a sua pasta, escreva <b>“Quero criar um app”</b> e deixe a skill conduzir. 🚀</div>
+  <div class="foot"><span>exclusiveapp · tutorial</span><span>7</span></div>
+</section>
+</body></html>
